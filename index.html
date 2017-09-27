@@ -35,7 +35,7 @@
 							
 								<div class="col-xs-12 col-md-6">
 								
-									<div class="panel panel-default">
+									<div class="panel panel-success">
 									
 										<div class="panel-heading"><h3 class="panel-title">Origin</h3></div>
 										
@@ -51,8 +51,6 @@
 												<input type="text" class="form-control" ng-model="rsync.origin.host" id="remote_host">
 											</div>
 
-											
-											
 											<div class="form-group">
 												<label for="remote_path">Path</label>
 												<input type="text" class="form-control" ng-model="rsync.origin.path" id="remote_path">
@@ -66,7 +64,7 @@
 								
 								<div class="col-xs-12 col-md-6">
 								
-									<div class="panel panel-default">
+									<div class="panel panel-danger">
 									
 										<div class="panel-heading"><h3 class="panel-title">Destination</h3></div>
 										
@@ -93,7 +91,7 @@
 									
 								</div>
 								
-								<div class="col-xs-12">
+								<div class="col-xs-12 col-md-6">
 								
 									<div class="panel panel-info">
 									
@@ -102,11 +100,12 @@
 										<div class="panel-body">
 									
 											<div class="checkbox">
-												<label><input type="checkbox" ng-model="rsync.options.stats" ng-init="val='true'" ng-true-value="true" ng-init="true" ng-false-value="false">Display file-transfer stats (adds --stats flag)</label>
+												<label><input type="checkbox" checked ng-model="rsync.options.stats" ng-init="val='true'" ng-true-value="true" ng-init="true" ng-false-value="false">Display file-transfer stats (adds --stats flag)</label>
 											</div>
 											
 											<div class="form-group">
 												<label for="remote_port">Port Number</label>
+												<p class="help-block">Specift a port number to SSH over (if requred).</p>
 												<input type="text" class="form-control" ng-model="rsync.options.port" id="remote_port">
 											</div>
 											
@@ -116,13 +115,32 @@
 									
 								</div>
 								
+								<div class="col-xs-12 col-md-6">
+									
+									<div class="panel panel-primary">
+										
+										<div class="panel-heading"><h3 class="panel-title">Tips</h3></div>
+										
+										<div class="panel-body">
+																			
+											<p>Use the <code>pwd</code> command to return the full path to the current directory.</p>
+											<p>To move the whole folder don't include a slash:</p>
+											<pre><code>folder-name</code></pre>
+											<p>To move just the folder contents follow the folder with a slash:</p>
+											<pre><code>folder-name/</code></pre>
+											
+										</div>
+										
+									</div>
+									
+								</div>
+								
 							</div>
-														
-							
-							
+
 						</form>
 
 					</div>
+				
 				</div>
 			
 			  </div>
@@ -131,8 +149,12 @@
 	</div>
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script>
+		window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+		ga('create','UA-26549429-1','auto');ga('send','pageview')
+	</script>
+	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
 	
 </body>
 </html>
