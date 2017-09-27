@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>rysnc Builder | v1.0.0</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				
+				<div class="page-header">
+				
+					<h1>RSYNC<small> A fast, versatile, remote and local file-copying tool</small></h1>
+				
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12 col-md-12">						
+						
+						<form>
+						
+							<div class="row">
+							
+								<div class="col-xs-12">
+									
+									<pre><code>rsync -avz <span ng-show="rsync.options.port">-e "ssh -p {{rsync.options.port}}"</span> <span ng-show="rsync.options.stats">--stats</span> <span ng-if="rsync.origin.user && rsync.origin.host">{{rsync.origin.user}}@{{rsync.origin.host}}</span><span ng-if="rsync.origin.user && rsync.origin.host && rsync.origin.path">:</span><span ng-if="rsync.origin.path">"</span>{{rsync.origin.path}}<span ng-if="rsync.origin.path">"</span> <span ng-if="rsync.destination.user && rsync.destination.host">{{rsync.destination.user}}@{{rsync.destination.host}}</span><span ng-if="rsync.destination.user && rsync.destination.host && rsync.destination.path">:</span><span ng-if="rsync.destination.path">"</span>{{rsync.destination.path}}<span ng-if="rsync.destination.path">"</span></code></pre>
+									
+									<hr>
+									
+								</div>
+							
+								<div class="col-xs-12 col-md-6">
+								
+									<div class="panel panel-default">
+									
+										<div class="panel-heading"><h3 class="panel-title">Origin</h3></div>
+										
+										<div class="panel-body">
+										
+											<div class="form-group">
+												<label for="remote_user">User</label>
+												<input type="text" class="form-control" ng-model="rsync.origin.user" id="remote_user">
+											</div>
+
+											<div class="form-group">
+												<label for="remote_host">Host</label>
+												<input type="text" class="form-control" ng-model="rsync.origin.host" id="remote_host">
+											</div>
+
+											
+											
+											<div class="form-group">
+												<label for="remote_path">Path</label>
+												<input type="text" class="form-control" ng-model="rsync.origin.path" id="remote_path">
+											</div>
+											
+										</div>
+									
+									</div>
+											
+								</div>
+								
+								<div class="col-xs-12 col-md-6">
+								
+									<div class="panel panel-default">
+									
+										<div class="panel-heading"><h3 class="panel-title">Destination</h3></div>
+										
+										<div class="panel-body">
+										
+											<div class="form-group">
+												<label for="remote_user">User</label>
+												<input type="text" class="form-control" ng-model="rsync.destination.user" id="remote_user">
+											</div>
+
+											<div class="form-group">
+												<label for="remote_host">Host</label>
+												<input type="text" class="form-control" ng-model="rsync.destination.host" id="remote_host">
+											</div>
+											
+											<div class="form-group">
+												<label for="remote_path">Path</label>
+												<input type="text" class="form-control" ng-model="rsync.destination.path" id="remote_path">
+											</div>
+											
+										</div>
+									
+									</div>
+									
+								</div>
+								
+								<div class="col-xs-12">
+								
+									<div class="panel panel-info">
+									
+										<div class="panel-heading"><h3 class="panel-title">Options</h3></div>
+										
+										<div class="panel-body">
+									
+											<div class="checkbox">
+												<label><input type="checkbox" ng-model="rsync.options.stats" ng-init="val='true'" ng-true-value="true" ng-init="true" ng-false-value="false">Display file-transfer stats (adds --stats flag)</label>
+											</div>
+											
+											<div class="form-group">
+												<label for="remote_port">Port Number</label>
+												<input type="text" class="form-control" ng-model="rsync.options.port" id="remote_port">
+											</div>
+											
+										</div>
+										
+									</div>
+									
+								</div>
+								
+							</div>
+														
+							
+							
+						</form>
+
+					</div>
+				</div>
+			
+			  </div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+</body>
+</html>
